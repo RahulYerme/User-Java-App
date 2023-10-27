@@ -11,7 +11,7 @@
    <groupId>com.app</groupId>
    <artifactId>app</artifactId>
    <version>${revision}</version>
-   <packaging>war</packaging>
+   <packaging>jar</packaging>
    <name>example app</name>
    <description>Example App</description>
    <properties>
