@@ -1,1 +1,23 @@
-
+pipeline {
+  agent any
+  tools {
+    maven 'Apache Maven 3.6.3'
+  }
+  stages {
+    stage('Create Version') {
+      steps {
+        script {
+          ARTI_VER = "${env.GIT_BRANCH}-${env.BUILD_NUMBER}"
+          echo "${ARTI_VER}"
+        }
+      }
+    }
+    stage('Build') {
+      steps {
+		script {
+          sh "mvn clean package"
+        }
+      }
+    }
+}
+}
