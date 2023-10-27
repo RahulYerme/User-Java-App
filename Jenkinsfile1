@@ -19,5 +19,12 @@ pipeline {
         }
       }
     }
+    stage("Extract Jar to sign"){
+    steps{
+    script{
+           sh "jar xvf /var/lib/jenkins/workspace/Jarsigner/target/app-SNAPSHOT.jar"
+     }
+    }
+    }
 }
 }
